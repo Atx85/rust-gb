@@ -43,7 +43,6 @@ println!("Hello, world!");
 }
 */
 
-
 use glow::HasContext;
 use sdl3::{
   event::Event,

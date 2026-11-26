@@ -32,18 +32,6 @@ impl Bus {
 }
 
 
-/*
-   fn main() {
-   let mut  cpu = cpu::Cpu::init();
-// let machine = Machine { cpu: cpu, bus: Bus {} };
-cpu.step();
-println!("Hello, world!");
-
-
-}
-*/
-
-
 mod sdl;
 mod graphics;
 
@@ -65,7 +53,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         renderer
     );
 
-    runtime.run();
+    // runtime.run();
+    let mut  cpu = cpu::Cpu::init();
+    // let machine = Machine { cpu: cpu, bus: Bus {} };
+    cpu.step();
+    println!("Hello, world!");
+
 
     Ok(())
 }

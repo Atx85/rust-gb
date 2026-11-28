@@ -4,7 +4,7 @@
 mod cpu;
 mod ppu;
 mod instruction_set; 
-
+mod asm;
 
 struct Machine {
   cpu :cpu::Cpu,
@@ -70,7 +70,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         graphics::gl_context::GlContext::new(&window, &video)?;
 
     let renderer = graphics::renderer::Renderer::new(gl_context);
-    let mut runtime = Runtime::new(
+    let  runtime = Runtime::new(
         sdl,
         window,
         renderer
@@ -78,7 +78,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // runtime.run();
     let mut  cpu = cpu::Cpu::init();
-    let mut bus = crate::Bus::new();
+    let  bus = crate::Bus::new();
     cpu.attach_bus(bus);
     // let machine = Machine { cpu: cpu, bus: Bus {} };
     cpu.step();
